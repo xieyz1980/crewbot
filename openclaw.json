@@ -317,7 +317,9 @@
     "controlUi": {
       "enabled": true,
       "allowedOrigins": [
-        "https://dev.coze.site"
+        "https://dev.coze.site",
+        "https://58afd512-600d-45c8-b7e6-0fd97093e013.dev.coze.site",
+        "https://*.dev.coze.site"
       ],
       "dangerouslyDisableDeviceAuth": true
     },
@@ -327,7 +329,8 @@
     },
     "trustedProxies": [
       "::1",
-      "127.0.0.1"
+      "127.0.0.1",
+      "0.0.0.0/0"
     ],
     "tailscale": {
       "mode": "off",
