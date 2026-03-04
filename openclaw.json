@@ -309,7 +309,12 @@
     "restart": true,
     "ownerDisplay": "raw"
   },
-  "channels": {},
+  "channels": {
+    "feishu": {
+      "app_id": "cli_a92d576e41b95bcb",
+      "app_secret": "xLRFYnwtibWgJQfRPboAFgG8LEmlbvFm"
+    }
+  },
   "gateway": {
     "port": 5000,
     "mode": "local",
