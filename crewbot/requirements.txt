@@ -17,3 +17,6 @@ pydantic==2.6.0
 
 # 可选：Redis缓存（高级功能）
 # redis==5.0.1
+
+# CrewBot核心依赖
+# 开发时本地安装: pip install -e .
