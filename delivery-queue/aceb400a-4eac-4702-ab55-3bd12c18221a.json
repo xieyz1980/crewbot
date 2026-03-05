@@ -1,0 +1,23 @@
+{
+  "id": "aceb400a-4eac-4702-ab55-3bd12c18221a",
+  "enqueuedAt": 1772617177060,
+  "channel": "feishu",
+  "to": "13910077928",
+  "payloads": [
+    {
+      "text": "老板好！👋 这是通过 OpenClaw 发送的测试消息！",
+      "replyToTag": false,
+      "replyToCurrent": false,
+      "audioAsVoice": false
+    }
+  ],
+  "gifPlayback": false,
+  "mirror": {
+    "sessionKey": "agent:main:main",
+    "agentId": "main",
+    "text": "老板好！👋 这是通过 OpenClaw 发送的测试消息！"
+  },
+  "retryCount": 4,
+  "lastAttemptAt": 1772670533297,
+  "lastError": "Request failed with status code 400"
+}

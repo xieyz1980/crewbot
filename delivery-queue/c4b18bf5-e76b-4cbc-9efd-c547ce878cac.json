@@ -1,0 +1,23 @@
+{
+  "id": "c4b18bf5-e76b-4cbc-9efd-c547ce878cac",
+  "enqueuedAt": 1772616784387,
+  "channel": "feishu",
+  "to": "谢友泽",
+  "payloads": [
+    {
+      "text": "老板好！👋 飞书消息测试成功，一切正常运行！",
+      "replyToTag": false,
+      "replyToCurrent": false,
+      "audioAsVoice": false
+    }
+  ],
+  "gifPlayback": false,
+  "mirror": {
+    "sessionKey": "agent:main:main",
+    "agentId": "main",
+    "text": "老板好！👋 飞书消息测试成功，一切正常运行！"
+  },
+  "retryCount": 4,
+  "lastAttemptAt": 1772670532898,
+  "lastError": "Request failed with status code 400"
+}
