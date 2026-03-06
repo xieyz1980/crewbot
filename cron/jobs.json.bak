@@ -8,7 +8,7 @@
       "name": "每日市场汇报",
       "enabled": true,
       "createdAtMs": 1772618677608,
-      "updatedAtMs": 1772618751607,
+      "updatedAtMs": 1772701261060,
       "schedule": {
         "kind": "cron",
         "expr": "0 17 * * *",
@@ -25,11 +25,11 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1772701200000,
-        "lastRunAtMs": 1772618696614,
+        "nextRunAtMs": 1772787600000,
+        "lastRunAtMs": 1772701200001,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 54993,
+        "lastDurationMs": 61059,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -42,7 +42,7 @@
       "name": "每日AI职位推荐",
       "enabled": true,
       "createdAtMs": 1772619280331,
-      "updatedAtMs": 1772619361909,
+      "updatedAtMs": 1772696050447,
       "schedule": {
         "expr": "0 12 * * *",
         "kind": "cron",
@@ -52,7 +52,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "为谢友泽推荐AI相关高端职位并生成定制化简历：\n\n目标职位：\n- AI架构师 / CTO / AI基础设施负责人\n- 年薪80万以上\n- 要求与谢友泽背景匹配（云计算、VMware、多云平台、容器、MLOps经验）\n\n任务：\n1. 搜索当日最新发布的AI架构师、CTO、AI基础设施相关职位\n2. 筛选最匹配的1-3个职位（贵在精不在多）\n3. 为每个职位生成定制化简历：\n   - 根据职位JD调整简历侧重点\n   - 突出相关技能和经验\n   - 使用飞书文档创建简历\n4. 发送职位推荐+简历链接给谢友泽\n\n谢友泽背景信息：\n- 联想技术专家（2025.3至今）\n- VMware 7年经验（高级开发工程师、高级顾问、售前）\n- 美国太平洋大学AI硕士在读\n- 精通：多云平台(Azure/AWS/GCP/vSphere)、K8s/Docker、CI/CD、VDI\n- 专利：3项（含美国专利）\n- 认证：VCAP/VCP全系列、CKA、PMP\n- 管理过30人团队\n\n请使用网络搜索工具查找最新职位，并为每个职位生成定制化简历。",
+        "message": "为谢友泽推荐AI相关高端职位并生成定制化简历：\n\n目标职位：\n- AI架构师 / CTO / AI基础设施负责人\n- 年薪80万以上\n- 要求与谢友泽背景匹配（云计算、VMware、多云平台、容器、MLOps经验）\n\n任务：\n1. 搜索当日最新发布的AI架构师、CTO、AI基础设施相关职位\n2. 筛选最匹配的1-3个职位（贵在精不在多）\n3. 为每个职位生成定制化简历（Markdown格式）：\n   - 根据职位JD调整简历侧重点\n   - 突出相关技能和经验\n   - 保存到工作区文件\n4. 提供每个职位的申请方式（官网/招聘平台/邮箱/内推）\n5. 发送职位推荐+简历文件路径+申请方式给谢友泽\n\n谢友泽背景信息：\n- 联想技术专家（2025.3至今）\n- VMware 7年经验（高级开发工程师、高级顾问、售前）\n- 美国太平洋大学AI硕士在读\n- 精通：多云平台(Azure/AWS/GCP/vSphere)、K8s/Docker、CI/CD、VDI\n- 专利：3项（含美国专利）\n- 认证：VCAP/VCP全系列、CKA、PMP\n- 管理过30人团队\n\n输出格式要求：\n1. 职位推荐列表（含公司名称、薪资、地点、申请链接）\n2. 每个职位对应的定制化简历（保存为独立Markdown文件）\n3. 申请方式说明\n\n请使用网络搜索工具查找最新职位，并生成完整报告。",
         "model": "coze/kimi-k2-5-260127",
         "timeoutSeconds": 300
       },
@@ -60,7 +60,71 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1772683200000
+        "nextRunAtMs": 1772769600000,
+        "lastRunAtMs": 1772695750438,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300009,
+        "lastError": "cron: job execution timed out",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "6f204a3b-e002-4f83-89d6-75b122ae0759",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "CrewBot夜间开发任务-书籍项目",
+      "enabled": true,
+      "createdAtMs": 1772751439472,
+      "updatedAtMs": 1772751439472,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 22 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "启动夜间自动开发模式：\n\n【书籍项目夜间任务】\n1. 第5章框架生成 - Writer Agent\n2. 技术资料收集 - Researcher Agent  \n3. 架构图代码生成 - Coder Agent\n4. 第4章自动校对 - Analyst Agent\n\n【CrewBot项目夜间任务】\n1. OpenAI API集成\n2. Claude API集成\n3. 错误处理与重试机制\n4. 日志与监控系统\n5. 单元测试编写\n\n所有产出需：\n- 提交到GitHub\n- 生成详细提交记录\n- 明早08:00前完成\n\n开始执行！",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1772805600000
+      }
+    },
+    {
+      "id": "5540bfe7-5064-42c0-b5e8-5e04da07010c",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "10分钟组员监督检查",
+      "enabled": true,
+      "createdAtMs": 1772751768302,
+      "updatedAtMs": 1772762040415,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 600000,
+        "anchorMs": 1772751768302
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "执行10分钟监督检查：\n\n【检查清单】\n1. GitHub提交状态检查（books + crewbot仓库）\n2. 人类组员产出检查：\n   - 谢友泽：第5章写作进度\n   - Dora：第4章配图进度\n   - James：审校任务状态\n   - Jason：文档整理状态\n   - Jim：资料收集状态\n3. AI Agent状态检查：\n   - Writer Agent：写作任务队列\n   - Coder Agent：代码开发进度\n   - Researcher Agent：资料收集进度\n4. 任务完成度评估\n5. 如果发现摸鱼/停滞：立即提醒\n6. 如果任务提前完成：立即启动下一步\n\n【产出要求】\n- 发现问题立即飞书提醒\n- 任务完成立即推进\n- 记录监督日志"
+      },
+      "state": {
+        "nextRunAtMs": 1772762568383,
+        "lastRunAtMs": 1772761968383,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 72032,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "runningAtMs": 1772762568384
       }
     }
   ]
