@@ -1,0 +1,6 @@
+2026/03/06-09:34:12.768 12c2 Creating DB /workspace/projects/browser/openclaw/user-data/Default/IndexedDB/https_bytedance.larkoffice.com_0.indexeddb.leveldb since it was missing.
+2026/03/06-09:34:12.774 12c2 Reusing MANIFEST /workspace/projects/browser/openclaw/user-data/Default/IndexedDB/https_bytedance.larkoffice.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/06-09:35:17.790 12c2 Level-0 table #5: started
+2026/03/06-09:35:17.797 12c2 Level-0 table #5: 559712 bytes OK
+2026/03/06-09:35:17.799 12c2 Delete type=0 #3
+2026/03/06-09:35:17.801 12c2 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

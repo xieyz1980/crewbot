@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  crewbot:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - CREWBOT_PORT=8080
+      - CREWBOT_LOG_LEVEL=INFO
+      # 可选：配置API密钥
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/stats"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 可选：Redis缓存（高级功能）
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+  #   restart: unless-stopped
+
+volumes:
+  crewbot_data:
