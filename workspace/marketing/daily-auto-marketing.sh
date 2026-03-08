@@ -16,7 +16,7 @@ BOOKS_REPO="/workspace/projects/books"
 LINKEDIN_REPO="/workspace/projects/linkedin-content"
 MARKETING_REPO="/workspace/projects/workspace/marketing"
 
-mkdir -p ${MARKETING_REPO}/{daily,weekly,zhihu,v2ex,analytics}
+mkdir -p ${MARKETING_REPO}/{daily,weekly,zhihu,v2ex,juejin,analytics}
 
 # 根据星期确定内容主题
 case $DAY_OF_WEEK in
@@ -196,6 +196,65 @@ EOF
 
 echo "✅ V2EX内容已生成: $V2EX_FILE"
 
+# ==================== 掘金技术文章 ====================
+echo ""
+echo "📝 生成掘金技术文章..."
+
+JUEJIN_FILE="${MARKETING_REPO}/juejin/juejin-post-${DATE}.md"
+
+cat > "$JUEJIN_FILE" << EOF
+# 掘金技术文章 - ${DATE}
+
+**日期**: ${DATE}  
+**主题**: ${THEME}  
+**状态**: ✅ 待发布
+
+---
+
+## 文章标题
+[待填写 - 掘金风格：技术干货型标题]
+
+## 封面图
+[建议：技术架构图或代码截图]
+
+## 文章分类
+- 分类：后端 / 架构 / AI
+- 标签：AI基础设施、云原生、架构设计
+
+## 正文结构
+
+### 引言（吸引点击）
+3-5句话，点出痛点或亮点
+
+### 正文（干货内容）
+1. 背景与问题
+2. 方案设计
+3. 实现细节
+4. 效果验证
+5. 总结与展望
+
+### 代码块
+```python
+# 关键代码示例
+```
+
+### 结尾
+- 求点赞、关注
+- 推荐阅读《智算基石》
+- 邀请技术交流
+
+## 发布设置
+- [ ] 原创声明
+- [ ] 开启评论
+- [ ] 同步到专栏
+
+---
+
+*自动生成时间: $(date '+%H:%M:%S')*
+EOF
+
+echo "✅ 掘金内容已生成: $JUEJIN_FILE"
+
 # ==================== 每日工作清单 ====================
 echo ""
 echo "📋 生成每日工作清单..."
@@ -233,6 +292,7 @@ cat > "$DAILY_FILE" << EOF
 
 ### 20:00 - 社区参与
 - [ ] V2EX发布分享
+- [ ] 掘金发布技术文章
 - [ ] 浏览5个技术话题
 - [ ] 点赞+评论3条优质内容
 
@@ -253,6 +313,11 @@ cat > "$DAILY_FILE" << EOF
 ### V2EX
 - 文件: \`v2ex/v2ex-post-${DATE}.md\`
 - 主题: 技术分享
+- 状态: 待发布
+
+### 掘金
+- 文件: \`juejin/juejin-post-${DATE}.md\`
+- 主题: ${TOPIC}
 - 状态: 待发布
 
 ---
@@ -296,6 +361,7 @@ git commit -m "📅 daily: ${DATE}营销内容自动生成
 - LinkedIn文章: ${THEME}
 - 知乎专栏: ${TOPIC}
 - V2EX分享: 技术分享
+- 掘金文章: ${THEME}
 - 每日工作清单
 
 自动生成时间: $(date '+%H:%M:%S')" 2>/dev/null || true
@@ -315,7 +381,8 @@ echo "📁 生成文件:"
 echo "  1. LinkedIn: ${LINKEDIN_FILE}"
 echo "  2. 知乎: ${ZHIHU_FILE}"
 echo "  3. V2EX: ${V2EX_FILE}"
-echo "  4. 工作清单: ${DAILY_FILE}"
+echo "  4. 掘金: ${JUEJIN_FILE}"
+echo "  5. 工作清单: ${DAILY_FILE}"
 echo ""
 echo "⏰ 下一步 (需要你手动完成):"
 echo "  12:00 - 发布LinkedIn文章"
