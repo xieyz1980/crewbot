@@ -1,0 +1,6 @@
+docker-compose.yml
+services-llama2-api
+build-.-runtime-nvidia
+NVIDIA_VISIBLE_DEVICES-all
+ports-5000-5000
+devices-nvidia-gpu

@@ -1,0 +1,9 @@
+# 视频片段列表 - 按顺序合并
+file '01_title.mp4'
+file '02_section1.mp4'
+file '03_nvidia_smi.mp4'
+file '04_section2.mp4'
+file '05_dockerfile.mp4'
+file '07_deploy.mp4'
+file '09_gpu_monitor.mp4'
+file '10_summary.mp4'
