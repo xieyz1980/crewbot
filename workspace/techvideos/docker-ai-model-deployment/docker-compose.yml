@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  llama2-api:
+    build: .
+    container_name: llama2-gpu
+    runtime: nvidia  # 关键：启用NVIDIA运行时
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all  # 使用所有GPU
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - MODEL_NAME=${MODEL_NAME:-TinyLlama/TinyLlama-1.1B-Chat-v1.0}
+      - HF_TOKEN=${HF_TOKEN}  # HuggingFace token（可选，公开模型不需要）
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/root/.cache/huggingface  # 缓存模型文件
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+    # 限制资源使用（可选）
+    # mem_limit: 16g
